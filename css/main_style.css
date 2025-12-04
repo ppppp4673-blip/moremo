@@ -1,0 +1,836 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/* 전체 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "SUITE Variable", "pretendad", sans-serif;
+  /*    */
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+/* 헤더 */
+header {
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: #3e2723;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 70px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* 로고 */
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 4px;
+  margin: 0 auto;
+  flex: 1;
+  justify-content: center;
+}
+
+/* 네비게이션 메뉴 */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu li {
+  position: relative;
+  margin-left: 25px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+  opacity: 0.7;
+}
+
+/* 우측 아이콘 영역 */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 100px;
+  /* 아이콘 영역 최소 너비 */
+  justify-content: flex-end;
+}
+
+/* 검색 아이콘 */
+.search-icon {
+  color: #000000;
+  font-size: 28px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  margin-left: 30px;
+}
+
+.search-icon:hover {
+  opacity: 0.7;
+}
+
+/* 메뉴 아이콘 (햄버거) */
+.menu-icon {
+  color: #000000;
+  font-size: 28px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-icon:hover {
+  opacity: 0.7;
+}
+
+/* 햄버거 메뉴 바 스타일 (선택사항) */
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 오버레이 */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* 메인 배너 */
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 250px;
+  background: #edbbbc;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 30%;
+}
+.hero-content h3 {
+  font-size: 25px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: #453331;
+}
+.hero-content h2 {
+  font-size: 60px;
+  line-height: 1.35;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #502e22;
+  text-align: left;
+}
+
+.hero-content p {
+  font-size: 30px;
+  color: #836461;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.gradient-video {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 40%);
+  mask-image: linear-gradient(to right, transparent, black 40%);
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+/* HOT Deals */
+
+.hot-deals {
+  padding: 80px 0;
+  color: #666;
+}
+
+.hot-deals-title {
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 400;
+}
+.hot-deals-title strong {
+  color: #666; /* 또는 #8d696b */
+  font-weight: 700;
+}
+.hot-deals h2 {
+  max-width: 1200px;
+  margin: 0 auto 24px;
+  font-size: 40px;
+}
+
+/* Swiper 컨테이너 */
+.hot-deals-swiper {
+  max-width: 1600px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* 슬라이드 하나의 크기 (497 x 640) */
+.hot-deals-swiper .swiper-slide {
+  width: 450px !important;
+  height: 640px !important;
+  display: flex;
+  align-items: flex-start;
+  max-width: 1900px;
+}
+
+/* 카드 전체 */
+.hot-item {
+  width: 496px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 이미지 영역 (497 x 488) */
+.hot-img {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.hot-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 꽉 차게 */
+  display: block;
+}
+
+/* 아래 텍스트 영역 */
+.hot-info {
+  flex: 1;
+  padding: 16px 20px 18px;
+}
+
+/* 상품명 한 줄, 길면 ... 처리 */
+.hot-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 가격 영역 (원가 + 할인가) */
+.hot-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.hot-price .old-price {
+  font-size: 18px;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.hot-price .new-price {
+  color: #ff3055;
+}
+
+/* 살짝 떠오르는 hover 효과 (선택사항) */
+.hot-item:hover {
+  transform: translateY(-6px);
+  transition: transform 0.2s ease;
+}
+
+/* Swiper 버튼/페이지네이션 색상 */
+.hot-deals .swiper-button-next,
+.hot-deals .swiper-button-prev {
+  color: #fff;
+}
+
+.hot-deals .swiper-pagination-bullet-active {
+  background: #ff3055;
+}
+
+/* 섹션 전체 레이아웃 */
+.side-feature {
+  background-color: #fdf3f3;
+  /* 전체 배경 */
+  width: 100%;
+  padding-block: 160px;
+}
+
+.side-feature .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  height: 896px;
+  margin: 0 auto;
+}
+
+/* 왼쪽 메뉴 */
+.side-menu ul {
+  list-style: none;
+  padding: 20vh;
+}
+
+.side-menu .menu-item {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #666;
+  text-align: center;
+  margin: 25px 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+  padding-block: 5px;
+}
+
+/* 활성 메뉴 밑줄 */
+.side-menu .menu-item.active {
+  color: #6c2c24;
+}
+
+.side-menu .menu-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #6c2c24;
+}
+
+/* 오른쪽 메인 이미지 */
+.side-main-image {
+  width: 623px;
+  height: 623px;
+  /* 원하는 가로 사이즈로 조절 */
+
+  position: relative;
+  cursor: pointer;
+}
+
+.side-main-image ul li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.side-main-image ul li.active {
+  display: block;
+}
+
+/* 라이프 뷰티 브랜드 */
+
+/* .brand_content {
+  flex: 1;
+  padding-left: 60px;
+} */
+
+.brand_section {
+  width: 100%;
+  height: 915px;
+  display: flex;
+  align-items: center;
+  /*   
+  justify-content: space-between; */
+  padding: 0px 100px;
+  /* 양쪽 여백 */
+  background-color: #f4d9da;
+  background-image: url(../img/moremo_img3.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.brand_content {
+  /* background: #ccc; */
+  /* width: 500px; */
+  overflow: hidden;
+}
+
+.brand_content h3 {
+  font-size: 30px;
+  letter-spacing: 0.05em;
+  color: #847c7c;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+
+.brand_content h2 {
+  font-size: 79px;
+  font-weight: 600;
+  margin-bottom: 26px;
+  color: #8d696b;
+}
+
+.brand_content p {
+  font-size: 28px;
+  color: #bd4668;
+  font-weight: 400;
+}
+
+.brand_content .more_btn {
+  background: #bd4668;
+  color: #fff;
+  font-size: 22px;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+.brand_content .more_btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 혜택 섹션 */
+.benefits {
+  display: flex;
+  gap: 5px;
+  padding: 5px 5px;
+  margin: 0;
+}
+
+.benefit-card {
+  flex: 1;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+}
+
+.benefit-card img {
+  width: 250px;
+  height: 180px;
+  justify-content: space-between;
+}
+
+.benefit-card img:hover {
+  cursor: pointer;
+}
+
+.benefit-card.yellow {
+  background: #ffefb3;
+  height: 310px;
+  /* 배너 높이 예시 (이미지 사이즈 맞게) */
+  display: flex;
+  justify-content: flex space-between;
+  /* ▶ 안의 요소를 오른쪽으로 정렬 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
+  padding-right: 80px;
+  /* 오른쪽 여백 (원하는 만큼) */
+}
+
+.kakao-icon {
+  width: 160px;
+  height: auto;
+}
+
+.benefit-card.yellow h3 {
+  font-weight: 600;
+  color: #7d5751;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.benefit-card.pink {
+  background: #ffc0c9;
+  height: 310px;
+  /* 배너 높이 예시 (이미지 사이즈 맞게) */
+  display: flex;
+  justify-content: space-around;
+  /* ▶ 안의 요소를 오른쪽으로 정렬 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
+  padding-right: 80px;
+  /* 오른쪽 여백 (원하는 만큼) */
+}
+
+.benefit-card.pink h3 {
+  font-weight: 600;
+  color: #333;
+  font-size: 30px;
+  line-height: 1.4;
+}
+
+.discount {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff6b6b;
+}
+
+/* 베스트셀러 섹션 기본 */
+.best-sellers {
+  padding: 100px 0;
+  background-color: #fff5f5;
+  text-align: center;
+}
+
+.best-sellers p {
+  font-size: 25px;
+  font-weight: 500;
+  color: #6c2c24;
+}
+
+.best-sellers h2 {
+  font-size: 50px;
+  margin-bottom: 32px;
+  color: #e36683;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* 3×2 레이아웃 */
+.bestseller-layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  /* 왼쪽 크게, 오른쪽 두 칸 */
+  grid-template-rows: 1fr 1fr;
+  /* 2행 */
+  gap: 20px;
+  cursor: pointer;
+}
+
+/* ================= 왼쪽 큰 카드 ================= */
+.bestseller-main-card {
+  grid-row: 1 / span 2;
+  /* 세로 2칸 차지 */
+  grid-column: 1 / 2;
+  background-color: #fdfafa;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 위쪽 이미지 */
+.bestseller-main-card .main-image {
+  padding: 24px;
+}
+
+.bestseller-main-card .main-image img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* 아래쪽 정보 영역 */
+.bestseller-main-card .main-info {
+  padding: 20px 28px 24px;
+  text-align: left;
+  border-top: 1px solid #f3e4e4;
+}
+
+.bestseller-main-card .main-info h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.bestseller-main-card .main-info .original-price {
+  font-size: 20px;
+  color: #746d6d;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.bestseller-main-card .main-info .price {
+  font-size: 25px;
+  font-weight: 900;
+  color: #e53444;
+}
+
+/* ================= 오른쪽 작은 카드들 ================= */
+/* 오른쪽 작은 카드들 기본 */
+.small-product {
+  position: relative;
+  background-color: #fe93b6;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.small-product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hover 시 카드 전체가 살짝 커짐 */
+.small-product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(214, 96, 96, 0.25);
+  z-index: 2;
+}
+
+/* 어두운 레이어 + 상세 정보 박스 */
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 144, 144, 0.45);
+  display: flex;
+  align-items: flex-end;
+  /* 아래에서부터 카드 올라오게 */
+  justify-content: center;
+  padding: 16px 18px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* hover됐을 때만 보이게 */
+.small-product:hover .product-overlay {
+  opacity: 1;
+}
+
+/* 왼쪽 메인 카드 정보와 비슷한 스타일의 흰색 박스 */
+.overlay-card {
+  width: 100%;
+  background-color: #ffe0e0;
+  border-radius: 12px 14px 0 0;
+  /* 위는 둥글게, 아래는 직각 */
+  padding: 14px 18px 16px;
+  text-align: left;
+}
+
+.overlay-card h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.overlay-card .original-price {
+  font-size: 15px;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.overlay-card .price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #de1d4a;
+}
+
+/* 인스타 섹션 전체 */
+.instagram-section {
+  text-align: center;
+  padding: 120px 0;
+  background-color: white;
+  position: relative;
+}
+
+.insta-title {
+  font-size: 24px;
+  color: #686767;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.insta-heading {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 100px;
+  color: #6a182b;
+}
+
+/* Swiper 컨테이너 */
+.insta-swiper {
+  width: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* 개별 슬라이드 */
+.insta-swiper .swiper-slide {
+  width: 224px !important;
+  /* 이미지 가로 */
+  height: 250px !important;
+  /* 이미지 세로 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.insta-swiper img {
+  width: 255px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+/* pagination & arrows 스타일 */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #444;
+}
+
+.swiper-pagination-bullet-active {
+  background: #e36683 !important;
+  /* 모레모 컬러 */
+}
+
+/* 전체 푸터 */
+.footer {
+  background: #3e2723;
+  color: #fff;
+  padding: 50px 60px;
+  font-family: "SUITE Variable", "pretendad", sans-serif;
+  font-size: 20px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* 공통 컬럼 */
+.footer-col {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* 아이콘 + 제목 */
+.footer-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.footer-title .icon {
+  width: 26px;
+}
+
+/* 왼쪽 버튼 */
+.customer-btn {
+  background: #fff;
+  padding: 6px 18px;
+  border-radius: 18px;
+  cursor: pointer;
+  color: #3e2723;
+  font-weight: 600;
+}
+
+/* SNS */
+.sns {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.sns img {
+  width: 24px;
+  cursor: pointer;
+}
+
+/* 가운데 텍스트 */
+.footer-center p {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* 오른쪽 메뉴 */
+.footer-menu {
+  display: flex;
+  gap: 24px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-menu a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-right p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.copy {
+  margin-top: 12px;
+  opacity: 0.7;
+  font-size: 13px;
+}
