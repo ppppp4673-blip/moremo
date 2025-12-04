@@ -1,10 +1,15 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* 전체 초기화 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  color: inherit;
 }
 
 ul {
@@ -15,9 +20,11 @@ body {
   font-family: "SUITE Variable", "pretendad", sans-serif;
   /*    */
 }
+
 h2 {
   font-family: "Montserrat", sans-serif;
 }
+
 /* 헤더 */
 header {
   background-color: #ffffff;
@@ -52,7 +59,7 @@ header {
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 10px;
 }
 
 .nav-menu li {
@@ -77,7 +84,7 @@ header {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   min-width: 100px;
   /* 아이콘 영역 최소 너비 */
   justify-content: flex-end;
@@ -168,12 +175,14 @@ header {
 .hero-image {
   width: 30%;
 }
+
 .hero-content h3 {
   font-size: 25px;
   font-weight: 500;
   padding-bottom: 20px;
   color: #453331;
 }
+
 .hero-content h2 {
   font-size: 60px;
   line-height: 1.35;
@@ -212,10 +221,13 @@ header {
   color: #333;
   font-weight: 400;
 }
+
 .hot-deals-title strong {
-  color: #666; /* 또는 #8d696b */
+  color: #666;
+  /* 또는 #8d696b */
   font-weight: 700;
 }
+
 .hot-deals h2 {
   max-width: 1200px;
   margin: 0 auto 24px;
@@ -394,20 +406,27 @@ header {
   align-items: center;
   /*   
   justify-content: space-between; */
-  padding: 0px 100px;
+  /* padding: 0px 100px; */
   /* 양쪽 여백 */
   background-color: #f4d9da;
-  background-image: url(../img/moremo_img3.png);
+  background-image: url(../img/moremo_img3.png), url(../img/background_img.png);
   background-repeat: no-repeat;
-  background-position: left bottom;
+  background-position: left bottom, right center;
   display: flex;
   justify-content: flex-end;
+}
+
+.brand_section .inner {
+  width: 1540px;
+  margin: 0 auto;
+  /* background: #ccc; */
 }
 
 .brand_content {
   /* background: #ccc; */
   /* width: 500px; */
   overflow: hidden;
+  text-align: right;
 }
 
 .brand_content h3 {
@@ -548,7 +567,7 @@ header {
 
 /* 3×2 레이아웃 */
 .bestseller-layout {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -570,6 +589,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 12px 30px rgba(214, 96, 96, 0.15);
 }
 
 /* 위쪽 이미지 */
@@ -613,8 +633,10 @@ header {
 .small-product {
   position: relative;
   background-color: #fe93b6;
+  width: 300px;
   overflow: hidden;
   border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(214, 96, 96, 0.15);
 }
 
 .small-product img {
@@ -622,10 +644,11 @@ header {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: .6s;
 }
 
 /* hover 시 카드 전체가 살짝 커짐 */
-.small-product:hover {
+.small-product:hover img {
   transform: scale(1.05);
   box-shadow: 0 12px 24px rgba(214, 96, 96, 0.25);
   z-index: 2;
@@ -635,7 +658,7 @@ header {
 .product-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(212, 144, 144, 0.45);
+  background: rgba(212, 144, 144, 0.35);
   display: flex;
   align-items: flex-end;
   /* 아래에서부터 카드 올라오게 */
@@ -653,11 +676,12 @@ header {
 /* 왼쪽 메인 카드 정보와 비슷한 스타일의 흰색 박스 */
 .overlay-card {
   width: 100%;
-  background-color: #ffe0e0;
+  background-color: rgba(255, 255, 255, 0.35);
   border-radius: 12px 14px 0 0;
   /* 위는 둥글게, 아래는 직각 */
   padding: 14px 18px 16px;
   text-align: left;
+  backdrop-filter: blur(10px);
 }
 
 .overlay-card h4 {
