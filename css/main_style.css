@@ -176,7 +176,7 @@ header {
 }
 
 .hero-image {
-  width: 30%;
+  width: 100%;
 }
 
 .hero-content h3 {
@@ -232,7 +232,7 @@ header {
 }
 
 .hot-deals h2 {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto 24px;
   font-size: 40px;
 }
@@ -263,9 +263,10 @@ header {
 
 /* 이미지 영역 (497 x 488) */
 .hot-img {
-  width: 100%;
+  width: 460px;
   height: 450px;
   overflow: hidden;
+  display: flex;
 }
 
 .hot-img img {
@@ -274,12 +275,13 @@ header {
   object-fit: cover;
   /* 꽉 차게 */
   display: block;
+  margin: 0 10px;
 }
 
 /* 아래 텍스트 영역 */
 .hot-info {
   flex: 1;
-  padding: 16px 20px 18px;
+  padding: 15px 15px;
 }
 
 /* 상품명 한 줄, 길면 ... 처리 */
@@ -877,13 +879,13 @@ header {
 }
 
 .footer-right p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
 }
 .footer-right strong {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: bold;
-  color: #f7e4e4;
+  color: #f8f4f4;
 }
 
 .copy {
