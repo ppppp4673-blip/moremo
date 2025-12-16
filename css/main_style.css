@@ -732,7 +732,7 @@ header {
 /* 인스타 섹션 전체 */
 .instagram-section {
   text-align: center;
-  padding: 120px 0;
+  padding: 150px 0;
   background-color: white;
   position: relative;
 }
@@ -774,8 +774,10 @@ header {
   width: 255px;
   height: 250px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 15px;
   display: block;
+  padding: 5px;
+
 }
 
 /* pagination & arrows 스타일 */
