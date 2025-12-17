@@ -783,11 +783,19 @@ header {
   display: flex;
   justify-content: space-between;
   gap: 60px;
+  width: 1600px;
+  margin: 0 auto;
+}
+
+.footer-left-center {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  gap: 200px;
 }
 
 /* 공통 컬럼 */
 .footer-col {
-  width: 33%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
