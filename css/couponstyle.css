@@ -31,7 +31,6 @@ body {
   margin: 0 auto;
   padding: 60px 24px 80px;
   justify-content: center;
-
 }
 
 /* 상단 타이틀 */
@@ -85,53 +84,20 @@ body {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
 }
 
 .coupon-body img {
-  width: 400px;
+  width: 350px;
 }
-
-.coupon-tag {
-  position: absolute;
-  top: -30px;
-  right: 50%;
-  transform: translateX(50%);
-  width: 25px;
-  height: 60px;
-  border-radius: 50%;
-  background: #f28ab8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+.coupon-body img:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  background-color: #e0b8cbb0;
 }
-
-.coupon-tag span {
-  text-transform: uppercase;
-}
-
 .coupon-body {
   margin-top: 18px;
-}
-
-.coupon-text {
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  margin-bottom: 12px;
-}
-
-.coupon-rate {
-  font-size: 58px;
-  font-weight: 800;
-  margin-bottom: 24px;
-}
-
-.coupon-desc {
-  font-size: 13px;
-  color: #555;
 }
 
 /* 버튼 */
@@ -141,7 +107,7 @@ body {
   background: #f28ab8;
   color: #111;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 20px 25px;
   cursor: pointer;
   display: inline-flex;
@@ -151,7 +117,7 @@ body {
   /* 세로 가운데 정렬 */
   gap: 16px;
   /* 글자와 아이콘 간격 */
-  width: 100%;
+  width: 80%;
   height: 100px;
   /* 원하는 높이로 조절 */
   border-radius: 999px;
@@ -159,6 +125,8 @@ body {
 
 .btn-primary:hover {
   opacity: 0.9;
+  background-color: #dd1568;
+  color: #ffffff;
 }
 
 .btn-arrow {
@@ -268,7 +236,7 @@ body {
 /* 하단 안내 */
 .notice-area {
   /* margin-top: 40px; */
-  padding: 100px 0;
+  padding: 80px 0;
 }
 
 .notice-list {
@@ -289,7 +257,7 @@ body {
   font-weight: bold;
 }
 
-.notice-list li+li {
+.notice-list li + li {
   margin-top: 10px;
 }
 
@@ -301,46 +269,32 @@ body {
 .footer {
   background: #3e2723;
   color: #fff;
-  padding: 50px 100px;
-  font-family: "SUITE Variable", "Pretendard", sans-serif;
-  font-size: 18px;
+  padding: 50px 60px;
+  font-family: "SUITE Variable", "pretendad", sans-serif;
+  font-size: 20px;
 }
 
-/* ✅ 3컬럼: 이미지처럼 고정 배치 */
 .footer-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.4fr;
-  /* 오른쪽이 정보 많으니 조금 넓게 */
-  column-gap: 100px;
-  align-items: start;
-
-  max-width: 1200px;
-  /* 가운데로 모아주기 */
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  width: 1600px;
   margin: 0 auto;
+}
+
+.footer-left-center {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  gap: 100px;
 }
 
 /* 공통 컬럼 */
 .footer-col {
-  width: auto;
-  /* ✅ 기존 33% 제거 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
-}
-
-/* ✅ (중요) 클래스 선택자 수정: .footer-col.footer-left 형태로 */
-.footer-col.footer-left {
-  align-items: flex-start;
-}
-
-.footer-col.footer-center {
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.footer-col.footer-right {
-  align-items: flex-start;
+  gap: 18px;
 }
 
 /* 아이콘 + 제목 */
@@ -350,15 +304,10 @@ body {
   gap: 10px;
   font-size: 25px;
   font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.footer-title strong {
-  font-size: 25px;
 }
 
 .footer-title .icon {
-  width: 25px;
+  width: 26px;
 }
 
 /* 왼쪽 버튼 */
@@ -369,68 +318,42 @@ body {
   cursor: pointer;
   color: #3e2723;
   font-weight: 600;
-  width: fit-content;
 }
 
 /* SNS */
 .sns {
   display: flex;
-  gap: 18px;
-  /* 이미지처럼 조금 촘촘 */
-  margin-top: 0;
-  /* ✅ 위로 올라가야 해서 제거 */
+  gap: 25px;
+  margin-top: 10px;
 }
 
 .sns img {
-  width: 20px;
-  /* 이미지처럼 약간 작게 */
+  width: 24px;
   cursor: pointer;
 }
 
 /* 가운데 텍스트 */
 .footer-center p {
   line-height: 1.6;
-  font-size: 20px;
-}
-
-/* ✅ 오른쪽 상단: 메뉴 + SNS를 한 줄로 */
-.footer-right-head {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 26px;
-  margin-bottom: 14px;
+  font-size: 18px;
 }
 
 /* 오른쪽 메뉴 */
 .footer-menu {
   display: flex;
   gap: 24px;
-  font-size: 16px;
-  margin: 0;
-  /* ✅ 기존 margin-bottom 제거 */
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .footer-menu a {
   color: #ffffff;
   text-decoration: none;
-  opacity: 0.9;
 }
 
-.footer-menu a:hover {
-  opacity: 1;
-}
-
-/* 오른쪽 본문 */
 .footer-right p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
-}
-
-.footer-right strong {
-  font-size: 16px;
-  font-weight: bold;
-  color: #f8f4f4;
 }
 
 .copy {
