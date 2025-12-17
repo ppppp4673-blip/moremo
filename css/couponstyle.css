@@ -8,7 +8,8 @@
 }
 
 body {
-  background: #1e2843; /* 딥네이비 */
+  background: #1e2843;
+  /* 딥네이비 */
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui,
     "Segoe UI", sans-serif;
 }
@@ -25,10 +26,12 @@ body {
 
 .membership-inner {
   width: 100%;
-  max-width: 520px; /* 실제 디자인 폭(세로 배너) */
+  max-width: 620px;
+  /* 실제 디자인 폭(세로 배너) */
   margin: 0 auto;
   padding: 60px 24px 80px;
   justify-content: center;
+
 }
 
 /* 상단 타이틀 */
@@ -36,6 +39,7 @@ body {
   text-align: center;
   margin-bottom: 300px;
   width: 100%;
+  /* background: #ccc; */
 }
 
 /* 센터정렬해야함 */
@@ -82,6 +86,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  align-items: center;
+}
+
+.coupon-body img {
+  width: 400px;
 }
 
 .coupon-tag {
@@ -136,11 +145,15 @@ body {
   padding: 20px 25px;
   cursor: pointer;
   display: inline-flex;
-  justify-content: center; /* 가로 가운데 정렬 */
-  align-items: center; /* 세로 가운데 정렬 */
-  gap: 16px; /* 글자와 아이콘 간격 */
+  justify-content: center;
+  /* 가로 가운데 정렬 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
+  gap: 16px;
+  /* 글자와 아이콘 간격 */
   width: 100%;
-  height: 100px; /* 원하는 높이로 조절 */
+  height: 100px;
+  /* 원하는 높이로 조절 */
   border-radius: 999px;
 }
 
@@ -155,7 +168,8 @@ body {
 
 /* BENEFIT 02 */
 .benefit-02 {
-  margin-top: 200px; /* 150px에서 250px로 증가 */
+  margin-top: 200px;
+  /* 150px에서 250px로 증가 */
   margin-bottom: 100px;
   gap: 50px;
   text-align: center;
@@ -253,7 +267,13 @@ body {
 
 /* 하단 안내 */
 .notice-area {
-  margin-top: 40px;
+  /* margin-top: 40px; */
+  padding: 100px 0;
+}
+
+.notice-list {
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .notice-list li {
@@ -261,13 +281,15 @@ body {
   font-size: 20px;
   line-height: 1.6;
   color: #d6d6e5;
-  margin-left: 250px;
+
+  /* margin-left: 250px; */
 }
+
 .notice-list .notice-strong {
   font-weight: bold;
 }
 
-.notice-list li + li {
+.notice-list li+li {
   margin-top: 10px;
 }
 
@@ -287,17 +309,20 @@ body {
 /* ✅ 3컬럼: 이미지처럼 고정 배치 */
 .footer-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.4fr; /* 오른쪽이 정보 많으니 조금 넓게 */
+  grid-template-columns: 1fr 1fr 1.4fr;
+  /* 오른쪽이 정보 많으니 조금 넓게 */
   column-gap: 100px;
   align-items: start;
 
-  max-width: 1200px; /* 가운데로 모아주기 */
+  max-width: 1200px;
+  /* 가운데로 모아주기 */
   margin: 0 auto;
 }
 
 /* 공통 컬럼 */
 .footer-col {
-  width: auto; /* ✅ 기존 33% 제거 */
+  width: auto;
+  /* ✅ 기존 33% 제거 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -350,12 +375,15 @@ body {
 /* SNS */
 .sns {
   display: flex;
-  gap: 18px; /* 이미지처럼 조금 촘촘 */
-  margin-top: 0; /* ✅ 위로 올라가야 해서 제거 */
+  gap: 18px;
+  /* 이미지처럼 조금 촘촘 */
+  margin-top: 0;
+  /* ✅ 위로 올라가야 해서 제거 */
 }
 
 .sns img {
-  width: 20px; /* 이미지처럼 약간 작게 */
+  width: 20px;
+  /* 이미지처럼 약간 작게 */
   cursor: pointer;
 }
 
@@ -379,7 +407,8 @@ body {
   display: flex;
   gap: 24px;
   font-size: 16px;
-  margin: 0; /* ✅ 기존 margin-bottom 제거 */
+  margin: 0;
+  /* ✅ 기존 margin-bottom 제거 */
 }
 
 .footer-menu a {
