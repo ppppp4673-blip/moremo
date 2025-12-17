@@ -92,9 +92,8 @@ body {
   width: 350px;
 }
 .coupon-body img:hover {
-  opacity: 0.6;
+  opacity: 0.8;
   cursor: pointer;
-  background-color: #e0b8cbb0;
 }
 .coupon-body {
   margin-top: 18px;
