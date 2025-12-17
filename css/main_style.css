@@ -791,7 +791,7 @@ header {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  gap: 200px;
+  gap: 100px;
 }
 
 /* 공통 컬럼 */
