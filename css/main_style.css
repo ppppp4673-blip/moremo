@@ -503,11 +503,11 @@ header {
   height: 300px;
   width: 100%;
 }
-
 .benefit-card img {
   width: 180px;
-  height: 130px;
+  height: 140px;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .benefit-card img:hover {
@@ -525,6 +525,7 @@ header {
   /* 세로 가운데 정렬 */
   padding-right: 50px;
   /* 오른쪽 여백 (원하는 만큼) */
+  cursor: pointer;
 }
 
 .kakao-icon {
@@ -551,6 +552,7 @@ header {
   /* 세로 가운데 정렬 */
   padding-right: 80px;
   /* 오른쪽 여백 (원하는 만큼) */
+  cursor: pointer;
 }
 
 .benefit-card.pink h3 {
@@ -777,7 +779,6 @@ header {
   border-radius: 15px;
   display: block;
   padding: 5px;
-
 }
 
 /* pagination & arrows 스타일 */
@@ -802,24 +803,43 @@ header {
 .footer {
   background: #3e2723;
   color: #fff;
-  padding: 50px 60px;
-  font-family: "SUITE Variable", "pretendad", sans-serif;
-  font-size: 20px;
+  padding: 30px 100px;
+  font-family: "SUITE Variable", "Pretendard", sans-serif;
+  font-size: 18px;
 }
 
+/* ✅ 3컬럼: 이미지처럼 고정 배치 */
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr; /* 오른쪽이 정보 많으니 조금 넓게 */
+  column-gap: 100px;
+  align-items: start;
+
+  max-width: 1200px; /* 가운데로 모아주기 */
+  margin: 0 auto;
 }
 
 /* 공통 컬럼 */
 .footer-col {
-  width: 33%;
+  width: auto; /* ✅ 기존 33% 제거 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 20px;
+}
+
+/* ✅ (중요) 클래스 선택자 수정: .footer-col.footer-left 형태로 */
+.footer-col.footer-left {
+  align-items: flex-start;
+}
+
+.footer-col.footer-center {
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-col.footer-right {
+  align-items: flex-start;
 }
 
 /* 아이콘 + 제목 */
@@ -829,6 +849,7 @@ header {
   gap: 10px;
   font-size: 25px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .footer-title strong {
@@ -836,7 +857,7 @@ header {
 }
 
 .footer-title .icon {
-  width: 26px;
+  width: 25px;
 }
 
 /* 왼쪽 버튼 */
@@ -847,17 +868,18 @@ header {
   cursor: pointer;
   color: #3e2723;
   font-weight: 600;
+  width: fit-content;
 }
 
 /* SNS */
 .sns {
   display: flex;
-  gap: 25px;
-  margin-top: 10px;
+  gap: 18px; /* 이미지처럼 조금 촘촘 */
+  margin-top: 0; /* ✅ 위로 올라가야 해서 제거 */
 }
 
 .sns img {
-  width: 24px;
+  width: 20px; /* 이미지처럼 약간 작게 */
   cursor: pointer;
 }
 
@@ -867,23 +889,39 @@ header {
   font-size: 20px;
 }
 
+/* ✅ 오른쪽 상단: 메뉴 + SNS를 한 줄로 */
+.footer-right-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 26px;
+  margin-bottom: 14px;
+}
+
 /* 오른쪽 메뉴 */
 .footer-menu {
   display: flex;
-  gap: 25px;
-  font-size: 18px;
-  margin-bottom: 15px;
+  gap: 24px;
+  font-size: 16px;
+  margin: 0; /* ✅ 기존 margin-bottom 제거 */
 }
 
 .footer-menu a {
   color: #ffffff;
   text-decoration: none;
+  opacity: 0.9;
 }
 
+.footer-menu a:hover {
+  opacity: 1;
+}
+
+/* 오른쪽 본문 */
 .footer-right p {
   font-size: 15px;
   line-height: 1.7;
 }
+
 .footer-right strong {
   font-size: 16px;
   font-weight: bold;

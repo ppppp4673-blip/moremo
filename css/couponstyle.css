@@ -11,16 +11,16 @@ body {
   background: #1e2843; /* 딥네이비 */
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", system-ui,
     "Segoe UI", sans-serif;
-  color: #ffffff;
 }
 
 /* 섹션 래퍼 – 가로 최대 1920px */
 .membership-wrap {
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
+  margin: 50px auto;
   background: #131c32;
   min-height: 100vh;
+  text-align: center;
 }
 
 .membership-inner {
@@ -28,24 +28,29 @@ body {
   max-width: 520px; /* 실제 디자인 폭(세로 배너) */
   margin: 0 auto;
   padding: 60px 24px 80px;
+  justify-content: center;
 }
 
 /* 상단 타이틀 */
 .mb-title-area {
   text-align: center;
   margin-bottom: 300px;
+  width: 100%;
 }
 
+/* 센터정렬해야함 */
 .mb-title-en {
-  font-size: 100px;
+  font-size: 80px;
   font-weight: 800;
   letter-spacing: 0.02em;
   text-align: center;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .mb-title-ko {
   margin-top: 8px;
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 700;
   color: #f28ab8;
   text-align: center;
@@ -59,14 +64,16 @@ body {
 .benefit-label {
   font-size: 60px;
   font-weight: 500;
-  margin-bottom: 26px;
+  margin-bottom: 50px;
   letter-spacing: 0.01em;
   color: #c171a3;
 }
 
 /* BENEFIT 01 */
 .benefit-01 {
-  margin-bottom: 140px;
+  margin-bottom: 70px;
+  gap: 40px;
+  text-align: center;
 }
 
 /* 쿠폰 박스 */
@@ -74,7 +81,7 @@ body {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 60px;
 }
 
 .coupon-tag {
@@ -126,7 +133,7 @@ body {
   color: #111;
   font-size: 25px;
   font-weight: 600;
-  padding: 18px 32px;
+  padding: 20px 25px;
   cursor: pointer;
   display: inline-flex;
   justify-content: center; /* 가로 가운데 정렬 */
@@ -148,7 +155,10 @@ body {
 
 /* BENEFIT 02 */
 .benefit-02 {
-  margin-bottom: px;
+  margin-top: 200px; /* 150px에서 250px로 증가 */
+  margin-bottom: 100px;
+  gap: 50px;
+  text-align: center;
 }
 
 .benefit-list {
@@ -165,6 +175,7 @@ body {
   align-items: stretch;
   border-radius: 16px;
   overflow: hidden;
+  background-color: #6f3d1e;
 }
 
 /* 왼쪽 */
@@ -264,27 +275,47 @@ body {
   content: "• ";
 }
 
-/* footer */
 /* 전체 푸터 */
 .footer {
   background: #3e2723;
   color: #fff;
-  padding: 50px 60px;
-  font-family: "Noto Sans KR", sans-serif;
+  padding: 50px 100px;
+  font-family: "SUITE Variable", "Pretendard", sans-serif;
+  font-size: 18px;
 }
 
+/* ✅ 3컬럼: 이미지처럼 고정 배치 */
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr; /* 오른쪽이 정보 많으니 조금 넓게 */
+  column-gap: 100px;
+  align-items: start;
+
+  max-width: 1200px; /* 가운데로 모아주기 */
+  margin: 0 auto;
 }
 
 /* 공통 컬럼 */
 .footer-col {
-  width: 33%;
+  width: auto; /* ✅ 기존 33% 제거 */
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* ✅ (중요) 클래스 선택자 수정: .footer-col.footer-left 형태로 */
+.footer-col.footer-left {
+  align-items: flex-start;
+}
+
+.footer-col.footer-center {
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footer-col.footer-right {
+  align-items: flex-start;
 }
 
 /* 아이콘 + 제목 */
@@ -292,58 +323,85 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-title strong {
+  font-size: 25px;
 }
 
 .footer-title .icon {
-  width: 26px;
+  width: 25px;
 }
 
 /* 왼쪽 버튼 */
 .customer-btn {
   background: #fff;
-  padding: 6px 118px;
+  padding: 6px 18px;
   border-radius: 18px;
   cursor: pointer;
   color: #3e2723;
   font-weight: 600;
+  width: fit-content;
 }
 
 /* SNS */
 .sns {
   display: flex;
-  gap: 14px;
-  margin-top: 10px;
+  gap: 18px; /* 이미지처럼 조금 촘촘 */
+  margin-top: 0; /* ✅ 위로 올라가야 해서 제거 */
 }
 
 .sns img {
-  width: 24px;
+  width: 20px; /* 이미지처럼 약간 작게 */
   cursor: pointer;
 }
 
 /* 가운데 텍스트 */
 .footer-center p {
   line-height: 1.6;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+/* ✅ 오른쪽 상단: 메뉴 + SNS를 한 줄로 */
+.footer-right-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 26px;
+  margin-bottom: 14px;
 }
 
 /* 오른쪽 메뉴 */
 .footer-menu {
   display: flex;
   gap: 24px;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  margin: 0; /* ✅ 기존 margin-bottom 제거 */
 }
 
 .footer-menu a {
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
+  opacity: 0.9;
 }
 
+.footer-menu a:hover {
+  opacity: 1;
+}
+
+/* 오른쪽 본문 */
 .footer-right p {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
+}
+
+.footer-right strong {
+  font-size: 16px;
+  font-weight: bold;
+  color: #f8f4f4;
 }
 
 .copy {
